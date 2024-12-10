@@ -1,1 +1,14 @@
-from fastapi import FastAPI\nimport os\n\napp = FastAPI()\n\n@app.get('/clone')\ndef clone_repo():\n    os.system('git clone https://github.com/smokewulf/gptauthor.git')\n    return {'message': 'Repository cloned successfully.'}\n\n@app.get('/commits')\ndef list_commits():\n    commits = os.popen('git --git-dir=gptauthor/.git log --oneline').read()\n    return {'commits': commits.splitlines()}
+from fastapi import FastAPI
+import os
+
+app = FastAPI()
+
+@app.get("/clone")
+def clone_repo():
+    os.system("git clone https://github.com/smokewulf/gptauthor.git")
+    return {"message": "Repository cloned successfully."}
+
+@app.get("/commits")
+def list_commits():
+    commits = os.popen("git --git-dir=gptauthor/.git log --oneline").read()
+    return {"commits": commits.splitlines()}
