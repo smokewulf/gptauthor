@@ -15,9 +15,7 @@ def display_drafts():
     else:
         print("--- Saved Drafts ---")
         for index, draft in enumerate(Drafts):
-            print(f"Draft {index + 1}:
-{draft}
-")
+            print(f"Draft {index + 1}: {draft}")
 
 
 def save_draft(draft):
