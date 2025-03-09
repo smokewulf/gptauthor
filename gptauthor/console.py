@@ -23,36 +23,6 @@ def save_draft(draft):
     print("Draft saved successfully!")
 
 
-def request_user_feedback():
-    while True:
-        feedback = input("Do you want to request changes? (yes/no): ").lower()
-        if feedback == 'yes':
-            change_request = input("What changes would you like? ")
-            print(f"Processing your request: '{change_request}'...")
-        elif feedback == 'no':
-            break
-        else:
-            print("Please answer 'yes' or 'no'.")
-
-
-def finalize_story():
-    final_draft = "Finalized draft of the story: A brave hero embarks on a quest to save the world."  # Simulated final draft
-    save_story(final_draft)
-
-
-def display_initial_draft(runtime, genre, details):
-    initial_draft = f"Dear Reader,
-
-This is a story of adventure where our hero,
-{details}. The journey spans about {runtime} and is classified under the genre '{genre}'.
-
-Hope you enjoy it!
-"  # Sample draft
-    print("--- Initial Story Draft ---")
-    print(initial_draft)
-    save_draft(initial_draft)  # Save initial draft
-
-
 def request_character_details():
     number_of_characters = int(input("How many characters do you want to create? "))
     for i in range(number_of_characters):
@@ -67,19 +37,14 @@ def request_location_details():
         display_location_description(location_name)
 
 
-def display_character_description(character_name):
-    print(f'--- Character Description for {character_name} ---')
-    appearance = input("Enter character appearance details: ")
-    attire = input("Enter character attire details: ")
-    personality = input("Enter character personality details: ")
-    environment = input("Enter character's environment details: ")
-    print(f"Character '{character_name}':
- Appearance: {appearance}
- Attire: {attire}
- Personality: {personality}
- Environment: {environment}
-")
-    dialogue_enhancement(character_name)  # Added dialogue enhancement call
+def display_character_description(character_name):                                                                                                                                          
+       print(f'--- Character Description for {character_name} ---')                                                                                                                            
+       appearance = input("Enter character appearance details: ")                                                                                                                              
+       attire = input("Enter character attire details: ")                                                                                                                                      
+       personality = input("Enter character personality details: ")                                                                                                                            
+       environment = input("Enter character's environment details: ")                                                                                                                          
+       print(f"Character '{character_name}':\n Appearance: {appearance}\n Attire: {attire}\n Personality: {personality}\n Environment: {environment}")                                         
+       dialogue_enhancement(character_name) 
 
 
 def dialogue_enhancement(character_name):
