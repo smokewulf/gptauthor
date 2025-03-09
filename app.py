@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 import os
+from pydantic import BaseModel
+from gptauthor.console import create_new_story  
 
 app = FastAPI()
 
