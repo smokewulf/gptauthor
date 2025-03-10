@@ -77,10 +77,10 @@ def create_new_story():
     deepen_character_backstories()
 
 
-def main(story: str):
-    print('Starting gptauthor...')
-    prompt_user_for_file()
-    finalize_story()  # Finalizing the story at the end
+def main(story: str = typer.Argument(...)):                           
+       print('Starting gptauthor...')                                    
+       prompt_user_for_file()                                            
+       finalize_story()  # Finalizing the story at the end
 
 if __name__ == '__main__':
     typer.run(main)
